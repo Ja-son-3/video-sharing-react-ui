@@ -1,6 +1,7 @@
 import { AddTaskOutlined, ReplyOutlined, ThumbDownOffAltOutlined, ThumbUpOutlined } from '@mui/icons-material'
 import React from 'react'
 import styled from 'styled-components'
+import Comments from '../components/Comments'
 
 const Container = styled.div`
   display: flex;
@@ -58,7 +59,6 @@ const Image = styled.img`
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
-
 `
 const ChannelDetail = styled.div`
   display: flex;
@@ -125,6 +125,8 @@ const Video = () => {
           </ChannelInfo>
           <Subcribe>Subscribe</Subcribe>
         </Channel>
+        <Hr />
+        <Comments />
       </Content>
       <Recommendation>recommendation</Recommendation>
     </Container>

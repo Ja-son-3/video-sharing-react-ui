@@ -2,6 +2,7 @@ import { AddTaskOutlined, ReplyOutlined, ThumbDownOffAltOutlined, ThumbUpOutline
 import React from 'react'
 import styled from 'styled-components'
 import Comments from '../components/Comments'
+import Card from "../components/Card"
 
 const Container = styled.div`
   display: flex;
@@ -128,7 +129,22 @@ const Video = () => {
         <Hr />
         <Comments />
       </Content>
-      <Recommendation>recommendation</Recommendation>
+      <Recommendation>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+      </Recommendation>
     </Container>
   )
 }

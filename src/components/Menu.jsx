@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 `
 const Logo = styled.div`
     display: flex;
-    align-content: center;
+    align-items: center;
     gap: 5px;
     font-weight: bold;
     margin-bottom: 25px;

@@ -1,13 +1,14 @@
 import styled from "styled-components"
 import LogoImg from "../img/logo.png"
 import { AccountCircleOutlined, ArticleOutlined, ExploreOutlined, FlagOutlined, HelpOutlineOutlined, HistoryOutlined, Home, LibraryMusicOutlined, LiveTvOutlined, MovieOutlined, SettingsBrightnessOutlined, SettingsOutlined, SportsBasketballOutlined, SportsEsportsOutlined, SubscriptionsOutlined, VideoLibraryOutlined } from "@mui/icons-material"
+import { Link } from "react-router-dom"
 
 
 const Container = styled.div`
     flex: 1;
-    background-color: ${({theme}) => theme.bgLighter};
+    background-color: ${({ theme }) => theme.bgLighter};
     height: 100vh;
-    color: ${({theme}) => theme.text};
+    color: ${({ theme }) => theme.text};
     font-size: 14px;
     position: sticky;
     top: 0;
@@ -21,6 +22,7 @@ const Logo = styled.div`
     gap: 5px;
     font-weight: bold;
     margin-bottom: 25px;
+    cursor: pointer;
 `
 const Img = styled.img`
     height: 25px;
@@ -34,7 +36,7 @@ const Item = styled.div`
 `
 const Hr = styled.hr`
     margin: 15px 0px;
-    border: 0.5px solid ${({theme}) => theme.soft};
+    border: 0.5px solid ${({ theme }) => theme.soft};
 `
 const Login = styled.div`
     
@@ -59,14 +61,16 @@ const Title = styled.h2`
   margin-bottom: 20px;
 `
 
-const Menu = ({setDarkMode, darkMode}) => {
+const Menu = ({ setDarkMode, darkMode }) => {
   return (
     <Container>
-        <Wrapper>
-            <Logo>
-                <Img src={LogoImg} />
-                VideoTube
-            </Logo>
+      <Wrapper>
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          <Logo>
+            <Img src={LogoImg} />
+            VideoTube
+          </Logo>
+        </Link>
         <Item>
           <Home />
           Home
@@ -90,8 +94,8 @@ const Menu = ({setDarkMode, darkMode}) => {
         </Item>
         <Hr />
         <Login>
-            Sign in to like videos, comment, and subscribe.
-            <Button><AccountCircleOutlined/>SIGN IN</Button>
+          Sign in to like videos, comment, and subscribe.
+          <Button><AccountCircleOutlined />SIGN IN</Button>
         </Login>
         <Hr />
         <Title>Best of VideoTube</Title>
@@ -132,11 +136,11 @@ const Menu = ({setDarkMode, darkMode}) => {
           <HelpOutlineOutlined />
           Help
         </Item>
-        <Item onClick={()=>setDarkMode(!darkMode)}>
+        <Item onClick={() => setDarkMode(!darkMode)}>
           <SettingsBrightnessOutlined />
-          Light Mode
+          {darkMode ? "Light" : "Dark" } Mode
         </Item>
-        </Wrapper>
+      </Wrapper>
     </Container>
   )
 }
